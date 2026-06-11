@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Title Generator - Hovix AI</title>
+
+<style>
+
+body{
+    font-family:Arial, sans-serif;
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+p{
+    color:#cbd5e1;
+}
+
+.container{
+    max-width:600px;
+    margin:auto;
+    background:#111827;
+    padding:20px;
+    border-radius:12px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:8px;
+    outline:none;
+}
+
+button{
+    margin-top:15px;
+    padding:12px 20px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.output{
+    margin-top:20px;
+    text-align:left;
+    background:white;
+    color:#111827;
+    padding:15px;
+    border-radius:10px;
+    display:none;
+}
+
+.title{
+    padding:8px;
+    margin:5px 0;
+    border-bottom:1px solid #ddd;
+}
+
+.back{
+    display:inline-block;
+    margin-top:20px;
+    color:#60a5fa;
+    text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>YouTube Title Generator</h1>
+<p>Generate viral YouTube titles instantly</p>
+
+<div class="container">
+
+    <input id="topic" type="text" placeholder="Enter video topic (e.g. AI, gaming, football)">
+
+    <button onclick="generateTitles()">Generate Titles</button>
+
+    <div class="output" id="output"></div>
+
+</div>
+
+<a class="back" href="index.html">← Back to Home</a>
+
+<script>
+
+function generateTitles(){
+
+let topic = document.getElementById("topic").value;
+
+if(topic === ""){
+    alert("Please enter a topic");
+    return;
+}
+
+let titles = [
+"10 " + topic + " Secrets Nobody Tells You",
+"I Tried " + topic + " for 7 Days (Insane Results)",
+"The Truth About " + topic + " in 2026",
+"How to Master " + topic + " FAST",
+"This " + topic + " Trick Changed Everything",
+"Why Everyone Is Talking About " + topic,
+"Beginner to Pro in " + topic + " (Full Guide)",
+"Do NOT Start " + topic + " Before Watching This",
+"Top 5 " + topic + " Hacks You Need",
+"How I Got Results Using " + topic + " in 24 Hours"
+];
+
+let html = "";
+
+for(let i = 0; i < titles.length; i++){
+    html += "<div class='title'>" + titles[i] + "</div>";
+}
+
+document.getElementById("output").style.display = "block";
+document.getElementById("output").innerHTML = html;
+
+}
+
+</script>
+
+</body>
+</html>

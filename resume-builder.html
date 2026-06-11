@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume Builder - Hovix AI</title>
+
+<style>
+
+body{
+    font-family:Arial, sans-serif;
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+p{
+    color:#cbd5e1;
+}
+
+.container{
+    max-width:600px;
+    margin:auto;
+    background:#111827;
+    padding:20px;
+    border-radius:12px;
+}
+
+input, textarea{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:none;
+    border-radius:8px;
+    outline:none;
+}
+
+button{
+    margin-top:15px;
+    padding:12px 20px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.output{
+    margin-top:20px;
+    text-align:left;
+    background:white;
+    color:#111827;
+    padding:15px;
+    border-radius:10px;
+    display:none;
+}
+
+.back{
+    display:inline-block;
+    margin-top:20px;
+    color:#60a5fa;
+    text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Resume Builder</h1>
+<p>Create a simple AI-style resume instantly</p>
+
+<div class="container">
+
+    <input id="name" type="text" placeholder="Your Name">
+
+    <input id="job" type="text" placeholder="Job Title">
+
+    <textarea id="skills" rows="4" placeholder="Your Skills (comma separated)"></textarea>
+
+    <textarea id="experience" rows="4" placeholder="Your Experience"></textarea>
+
+    <button onclick="generateResume()">Generate Resume</button>
+
+    <div class="output" id="output"></div>
+
+</div>
+
+<a class="back" href="index.html">← Back to Home</a>
+
+<script>
+
+function generateResume(){
+
+let name = document.getElementById("name").value;
+let job = document.getElementById("job").value;
+let skills = document.getElementById("skills").value;
+let experience = document.getElementById("experience").value;
+
+if(name === "" || job === ""){
+    alert("Please fill Name and Job Title");
+    return;
+}
+
+let output = `
+<h2>${name}</h2>
+<h3>${job}</h3>
+
+<hr>
+
+<h4>Skills</h4>
+<p>${skills}</p>
+
+<h4>Experience</h4>
+<p>${experience}</p>
+`;
+
+document.getElementById("output").style.display = "block";
+document.getElementById("output").innerHTML = output;
+
+}
+
+</script>
+
+</body>
+</html>

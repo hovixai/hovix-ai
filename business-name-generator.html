@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Name Generator - Hovix AI</title>
+
+<style>
+
+body{
+    font-family:Arial,sans-serif;
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:50px;
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+p{
+    color:#cbd5e1;
+}
+
+input{
+    width:300px;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    margin-top:20px;
+}
+
+button{
+    padding:12px 20px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    margin-left:10px;
+}
+
+#results{
+    margin-top:40px;
+}
+
+.name{
+    background:white;
+    color:#111827;
+    margin:10px auto;
+    padding:15px;
+    width:300px;
+    border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Business Name Generator</h1>
+
+<p>Generate startup names instantly.</p>
+
+<input type="text" id="keyword" placeholder="Enter your niche">
+
+<button onclick="generateNames()">
+Generate
+</button>
+
+<div id="results"></div>
+
+<script>
+
+function generateNames(){
+
+let keyword =
+document.getElementById("keyword").value;
+
+let names = [
+
+keyword + " Labs",
+keyword + " AI",
+keyword + " Hub",
+keyword + " Forge",
+keyword + " Studio",
+keyword + " Flow",
+keyword + " Works",
+keyword + " Boost",
+keyword + " Nova",
+keyword + " Genius"
+
+];
+
+let html = "";
+
+for(let i=0;i<names.length;i++){
+
+html +=
+'<div class="name">'+
+names[i]+
+'</div>';
+
+}
+
+document.getElementById("results").innerHTML = html;
+
+}
+
+</script>
+
+</body>
+</html>
