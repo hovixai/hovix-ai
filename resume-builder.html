@@ -6,129 +6,88 @@
 <title>Resume Builder - Hovix AI</title>
 
 <style>
-
 body{
-    font-family:Arial, sans-serif;
-    background:#0f172a;
-    color:white;
-    text-align:center;
-    padding:30px;
-}
-
-h1{
-    margin-bottom:10px;
-}
-
-p{
-    color:#cbd5e1;
+  font-family:Arial;
+  background:#0f172a;
+  color:white;
+  padding:30px;
 }
 
 .container{
-    max-width:600px;
-    margin:auto;
-    background:#111827;
-    padding:20px;
-    border-radius:12px;
+  max-width:800px;
+  margin:auto;
+}
+
+h1{
+  text-align:center;
+  margin-bottom:20px;
 }
 
 input, textarea{
-    width:100%;
-    padding:12px;
-    margin-top:10px;
-    border:none;
-    border-radius:8px;
-    outline:none;
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:8px;
+  border:none;
 }
 
 button{
-    margin-top:15px;
-    padding:12px 20px;
-    background:#2563eb;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#1d4ed8;
+  background:#2563eb;
+  color:white;
+  padding:12px 20px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  margin-top:10px;
 }
 
 .output{
-    margin-top:20px;
-    text-align:left;
-    background:white;
-    color:#111827;
-    padding:15px;
-    border-radius:10px;
-    display:none;
+  background:white;
+  color:black;
+  padding:20px;
+  margin-top:20px;
+  border-radius:10px;
+  white-space:pre-line;
 }
-
-.back{
-    display:inline-block;
-    margin-top:20px;
-    color:#60a5fa;
-    text-decoration:none;
-}
-
 </style>
 </head>
 
 <body>
 
-<h1>Resume Builder</h1>
-<p>Create a simple AI-style resume instantly</p>
-
 <div class="container">
 
-    <input id="name" type="text" placeholder="Your Name">
+<h1>Resume Builder</h1>
 
-    <input id="job" type="text" placeholder="Job Title">
+<input id="name" placeholder="Your Name">
+<input id="job" placeholder="Job Title">
+<textarea id="skills" placeholder="Skills (comma separated)"></textarea>
+<textarea id="exp" placeholder="Experience"></textarea>
 
-    <textarea id="skills" rows="4" placeholder="Your Skills (comma separated)"></textarea>
+<button onclick="generate()">Generate Resume</button>
 
-    <textarea id="experience" rows="4" placeholder="Your Experience"></textarea>
-
-    <button onclick="generateResume()">Generate Resume</button>
-
-    <div class="output" id="output"></div>
+<div class="output" id="output"></div>
 
 </div>
 
-<a class="back" href="index.html">← Back to Home</a>
-
 <script>
-
-function generateResume(){
+function generate(){
 
 let name = document.getElementById("name").value;
 let job = document.getElementById("job").value;
 let skills = document.getElementById("skills").value;
-let experience = document.getElementById("experience").value;
+let exp = document.getElementById("exp").value;
 
-if(name === "" || job === ""){
-    alert("Please fill Name and Job Title");
-    return;
+document.getElementById("output").innerText = 
+`NAME: ${name}
+
+JOB: ${job}
+
+SKILLS:
+${skills}
+
+EXPERIENCE:
+${exp}`;
 }
-
-let output = `
-<h2>${name}</h2>
-<h3>${job}</h3>
-
-<hr>
-
-<h4>Skills</h4>
-<p>${skills}</p>
-
-<h4>Experience</h4>
-<p>${experience}</p>
-`;
-
-document.getElementById("output").style.display = "block";
-document.getElementById("output").innerHTML = output;
-
-}
-
 </script>
 
 </body>
