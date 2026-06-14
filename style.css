@@ -57,7 +57,7 @@ nav a:hover{
     );
 
     color:white;
-    min-height:85vh;
+    min-height:90vh;
 
     display:flex;
     flex-direction:column;
@@ -77,8 +77,33 @@ nav a:hover{
 .hero p{
     font-size:22px;
     max-width:750px;
-    margin-bottom:35px;
+    margin-bottom:25px;
     line-height:1.7;
+}
+
+/* AI IMAGE */
+
+.hero-image{
+    width:320px;
+    max-width:80%;
+    margin:25px 0;
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
 }
 
 .hero-btn{
@@ -166,8 +191,8 @@ nav a:hover{
 }
 
 .feature-box h3{
-    margin-bottom:15px;
     font-size:24px;
+    margin-bottom:15px;
 }
 
 .feature-box p{
@@ -201,9 +226,9 @@ nav a:hover{
     background:white;
     padding:30px;
     border-radius:18px;
+    border:1px solid #e5e7eb;
     box-shadow:0 10px 25px rgba(0,0,0,0.08);
     transition:0.3s;
-    border:1px solid #e5e7eb;
 }
 
 .card:hover{
@@ -218,7 +243,6 @@ nav a:hover{
 
 .card p{
     color:#6b7280;
-    line-height:1.6;
 }
 
 /* ABOUT */
@@ -263,23 +287,13 @@ nav a:hover{
     text-align:center;
 }
 
-.container h1{
-    margin-bottom:15px;
-}
-
-.container p{
-    margin-bottom:25px;
-    color:#555;
-}
-
 .container input,
 .container textarea{
     width:100%;
     padding:15px;
+    margin-bottom:15px;
     border:1px solid #d1d5db;
     border-radius:10px;
-    margin-bottom:15px;
-    font-size:16px;
 }
 
 .container button{
@@ -289,9 +303,7 @@ nav a:hover{
     padding:14px 28px;
     border-radius:10px;
     cursor:pointer;
-    font-size:16px;
     font-weight:bold;
-    transition:0.3s;
 }
 
 .container button:hover{
@@ -299,11 +311,10 @@ nav a:hover{
 }
 
 #result{
-    margin-top:25px;
+    margin-top:20px;
     padding:20px;
     background:#f3f4f6;
-    border-radius:12px;
-    word-wrap:break-word;
+    border-radius:10px;
 }
 
 /* CONTACT */
@@ -347,6 +358,10 @@ nav{
 .stat-box{
     width:100%;
     max-width:300px;
+}
+
+.hero-image{
+    width:220px;
 }
 
 }
