@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Username Generator - HOVIX AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Username Generator</h1>
+
+<p>
+Create cool usernames instantly
+</p>
+
+<input
+type="text"
+id="keyword"
+placeholder="Enter a keyword">
+
+<br><br>
+
+<button onclick="generateUsername()">
+Generate Usernames
+</button>
+
+<div id="result"></div>
+
+<br>
+
+<a href="index.html">
+← Back to Home
+</a>
+
+</div>
+
+<script>
+
+function generateUsername() {
+
+let word =
+document.getElementById("keyword").value;
+
+if(word === ""){
+alert("Enter a keyword");
+return;
+}
+
+let usernames = [
+
+word + "Pro",
+word + "Master",
+word + "Official",
+word + "YT",
+word + "Gaming",
+word + "Hub",
+word + "Zone",
+word + "Live",
+"The" + word,
+word + "X"
+
+];
+
+let output = "<h2>Suggestions</h2>";
+
+for(let i=0;i<usernames.length;i++){
+
+output += "<p>" + usernames[i] + "</p>";
+
+}
+
+document.getElementById("result").innerHTML =
+output;
+
+}
+
+</script>
+
+</body>
+</html>
