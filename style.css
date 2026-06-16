@@ -40,6 +40,7 @@ nav a{
     color:white;
     text-decoration:none;
     font-weight:bold;
+    transition:0.3s;
 }
 
 nav a:hover{
@@ -69,7 +70,6 @@ nav a:hover{
     align-items:center;
 
     text-align:center;
-
     color:white;
 
     padding:20px;
@@ -79,6 +79,7 @@ nav a:hover{
     font-size:65px;
     max-width:900px;
     margin-bottom:20px;
+    text-shadow:0 4px 15px rgba(0,0,0,0.5);
 }
 
 .hero p{
@@ -87,19 +88,40 @@ nav a:hover{
     margin-bottom:30px;
 }
 
+/* BUTTON */
+
 .hero-btn{
+
     background:#2563eb;
     color:white;
+
     border:none;
+
     padding:16px 35px;
+
     border-radius:12px;
+
     cursor:pointer;
+
     font-size:18px;
     font-weight:bold;
+
+    transition:all 0.3s ease;
+
+    box-shadow:
+    0 10px 25px rgba(37,99,235,0.35);
 }
 
 .hero-btn:hover{
+
     background:#1d4ed8;
+
+    transform:
+    translateY(-4px)
+    scale(1.05);
+
+    box-shadow:
+    0 20px 40px rgba(37,99,235,0.5);
 }
 
 /* TOOLS */
@@ -125,24 +147,42 @@ nav a:hover{
 }
 
 .card{
-    background:white;
+
+    background:rgba(255,255,255,0.95);
+
+    backdrop-filter:blur(10px);
+
     padding:30px;
-    border-radius:18px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-    transition:0.3s;
+
+    border-radius:20px;
+
+    border:1px solid rgba(37,99,235,0.15);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.08);
+
+    transition:all 0.3s ease;
 }
 
 .card:hover{
-    transform:translateY(-10px);
+
+    transform:
+    translateY(-12px)
+    scale(1.03);
+
+    box-shadow:
+    0 20px 40px rgba(37,99,235,0.25);
 }
 
 .card h3{
     color:#111827;
     margin-bottom:15px;
+    font-size:22px;
 }
 
 .card p{
     color:#6b7280;
+    line-height:1.6;
 }
 
 /* ABOUT */
@@ -171,7 +211,12 @@ footer{
     background:#111827;
     color:white;
     text-align:center;
-    padding:30px;
+    padding:50px 20px;
+}
+
+footer p{
+    color:#d1d5db;
+    font-size:15px;
 }
 
 /* MOBILE */
